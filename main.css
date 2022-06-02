@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+:root{
+    --primary: #f52a0a;
+    --grey: #7c7474;
+    --card-width: 320px;
+    --image-width: calc(var(--card-width) / 1.5);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fira Sans',sans-serif;
+}
+/*main*/
+
+main{
+    min-height: 100vh;
+    background-image: linear-gradient(to bottom right, #de9387, #f52a0a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card{
+    position: relative;
+    width: 100%;
+    max-width: var(--card-width);
+    background-color: #FFF;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    transition: 0.4s;
+}
+/*image*/
+.card .image{
+    position: relative;
+    margin: -8rem auto 1.5rem;
+    width: var(--image-width);
+    height: var(--image-width);
+    border-radius: 50%;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    transition: 0.4s;
+    overflow: hidden;
+    padding: 0.25rem;
+    background-color: #FFF;
+}
+
+.card .image img{
+    width: 100%;
+    border-radius: 50%;
+    border: 3px solid var(--primary);
+    transition: 0.4s;
+}
+.card:hover {
+    --card-width: 480px;
+    --image-width: calc( var(--card-width) / 2);
+}
+.card:hover .image{
+    margin-top: -4rem;
+    border-radius: 2rem;
+}
+.card:hover .image img{
+    border-radius: 2rem;
+}
+/*content*/
+.card .name{
+    color: var(--grey);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+.card .content{
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: 0.4s;
+}
+.card .content p{
+    color: var(--grey);
+    font-size: 1.25rem;
+}
+.card:hover .content{
+    max-height: 300px;
+    opacity: 1;
+    overflow: visible;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+/*buttons*/
+.card .buttons{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 1.5rem;
+}
+.card .buttons button{
+    appearance: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    display: block;
+    padding: 0.5rem 1rem;
+    min-width: 160px;
+    background-color: var(--primary);
+    color: #fff;
+    font-size: 1.25rem;
+    border-radius: 1rem;
+    margin: 0 0.5rem;
+    transition: 0.4s;
+}
+.card .buttons button:hover {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    transform: translateY(-0.5rem) scale(1.15);
+}
